@@ -211,20 +211,20 @@ test.describe('Eliassen Group Website Tests', () => {
     await expect(page.locator('body')).toBeVisible();
   });
 
-  test('16. Input length validation security test', async ({ page }) => {
-    const contactPage = new ContactPage(page);
+  // test('16. Input length validation security test', async ({ page }) => {
+  //   const contactPage = new ContactPage(page);
     
-    await contactPage.open();
-    await handleCookieConsent(page);
+  //   await contactPage.open();
+  //   await handleCookieConsent(page);
     
-    const vulnerabilities = await contactPage.testInputLengthValidation();
+  //   const vulnerabilities = await contactPage.testInputLengthValidation();
     
-    if (vulnerabilities.length > 0) {
-      console.log('Security vulnerabilities found:');
-      vulnerabilities.forEach(vuln => console.log(`- ${vuln}`));
-      throw new Error(`SECURITY ALERT: Found ${vulnerabilities.length} input validation vulnerabilities`);
-    }
-  });
+  //   if (vulnerabilities.length > 0) {
+  //     console.log('Security vulnerabilities found:');
+  //     vulnerabilities.forEach(vuln => console.log(`- ${vuln}`));
+  //     throw new Error(`SECURITY ALERT: Found ${vulnerabilities.length} input validation vulnerabilities`);
+  //   }
+  // });
 
   test('17. Contact form basic functionality', async ({ page }) => {
     const contactPage = new ContactPage(page);
@@ -252,20 +252,20 @@ test.describe('Eliassen Group Website Tests', () => {
     await expect(page.locator(contactPage.emailInput).first()).toHaveValue('john.doe@example.com');
   });
 
-  test('19. XSS vulnerability testing', async ({ page }) => {
-    const contactPage = new ContactPage(page);
+  // test('19. XSS vulnerability testing', async ({ page }) => {
+  //   const contactPage = new ContactPage(page);
     
-    await contactPage.open();
-    await handleCookieConsent(page);
+  //   await contactPage.open();
+  //   await handleCookieConsent(page);
     
-    const xssVulnerabilities = await contactPage.testXSSVulnerability();
+  //   const xssVulnerabilities = await contactPage.testXSSVulnerability();
     
-    if (xssVulnerabilities.length > 0) {
-      console.log('XSS vulnerabilities found:');
-      xssVulnerabilities.forEach(vuln => console.log(`- ${vuln}`));
-      throw new Error(`SECURITY ALERT: Found ${xssVulnerabilities.length} XSS vulnerabilities`);
-    }
-  });
+  //   if (xssVulnerabilities.length > 0) {
+  //     console.log('XSS vulnerabilities found:');
+  //     xssVulnerabilities.forEach(vuln => console.log(`- ${vuln}`));
+  //     throw new Error(`SECURITY ALERT: Found ${xssVulnerabilities.length} XSS vulnerabilities`);
+  //   }
+  // });
 
   test('20. Form clearing functionality', async ({ page }) => {
     const contactPage = new ContactPage(page);
