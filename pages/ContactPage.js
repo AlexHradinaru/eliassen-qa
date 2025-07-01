@@ -83,20 +83,7 @@ class ContactPage extends BasePage {
     return vulnerabilities;
   }
 
-  // Simple XSS testing method
-  async testXSSVulnerability() {
-    const xssScript = '<script>alert("XSS")</script>';
-    const vulnerabilities = [];
 
-    await this.fill(this.firstNameInput, xssScript);
-    const value = await this.page.locator(this.firstNameInput).first().inputValue();
-    
-    if (value.includes('<script>')) {
-      vulnerabilities.push('First Name field accepts script tags');
-    }
-
-    return vulnerabilities;
-  }
 
   async clearAllFields() {
     await this.fill(this.firstNameInput, '');
